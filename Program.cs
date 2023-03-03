@@ -13,6 +13,9 @@
 
             Console.WriteLine(list);
 
+            Console.WriteLine("Hello, test2");
+
+
         }
 
     }
