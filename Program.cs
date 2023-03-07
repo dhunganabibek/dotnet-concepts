@@ -15,23 +15,44 @@
 
             //Console.WriteLine("Hello, test2");
 
-            Console.Write("x:");
-            var x = int.Parse(Console.ReadLine());
+            //Console.Write("x:");
+            //var x = int.Parse(Console.ReadLine());
 
-            Console.Write("y:");
-            var y = int.Parse(Console.ReadLine());
+            //Console.Write("y:");
+            //var y = int.Parse(Console.ReadLine());
 
-            Console.Write("Operation:");
-            var operation = Console.ReadLine();
+            //Console.Write("Operation:");
+            //var operation = Console.ReadLine();
 
-            if(operation == "+")
+            //if(operation == "+")
+            //{
+            //    Console.WriteLine($"{x} + {y} = {x+y}");
+            //}
+            //else if(operation == "-")
+            //{
+            //    Console.WriteLine($"{x} - {y} = {x - y}");
+            //}
+
+            //var i = 0;
+            //while (i < 10)
+            //{
+            //    Console.WriteLine("Hello World");
+            //    i++;
+            //}
+
+            //Console.ReadKey();
+
+            for(var i = 0; i < 10; i++)
             {
-                Console.WriteLine($"{x} + {y} = {x+y}");
+                for (var j = 0; j < 10; j++) {
+                    Console.WriteLine($"{i} * {j} = {i*j}");
+                }
+                
             }
-            else if(operation == "-")
-            {
-                Console.WriteLine($"{x} - {y} = {x - y}");
-            }
+
+            Console.ReadKey();
+
+
 
         }
 
