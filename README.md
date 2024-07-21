@@ -1,1 +1,2 @@
-# dot net core application
+# dot net core Concepts and new features
+
