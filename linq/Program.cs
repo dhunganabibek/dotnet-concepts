@@ -23,21 +23,71 @@ using Newtonsoft.Json;
 // collection.Select((x, i) => $"{x.ToString()}---- {i}").Dump();
 var data = @"
 [
-    {""name"":""Bibek"", ""age"":25, ""occupation"":""Engineer""},
-    {""name"":""Santona"", ""age"":24, ""occupation"":""Designer""},
-    {""name"":""John"", ""age"":30, ""occupation"":""Teacher""},
-    {""name"":""Alice"", ""age"":28, ""occupation"":""Doctor""},
-    {""name"":""Michael"", ""age"":35, ""occupation"":""Lawyer""},
-    {""name"":""Emily"", ""age"":22, ""occupation"":""Student""},
-    {""name"":""David"", ""age"":40, ""occupation"":""Manager""},
-    {""name"":""Sophia"", ""age"":27, ""occupation"":""Nurse""},
-    {""name"":""Daniel"", ""age"":32, ""occupation"":""Architect""},
-    {""name"":""Olivia"", ""age"":29, ""occupation"":""Writer""}
+    {
+        ""name"":""Bibek"",
+        ""age"":25,
+        ""occupation"":""Engineer"",
+        ""courses"": [""AI"", ""Machine Learning"", ""Data Structures""]
+    },
+    {
+        ""name"":""Santona"",
+        ""age"":24,
+        ""occupation"":""Designer"",
+        ""courses"": [""Graphic Design"", ""UI/UX"", ""Illustration""]
+    },
+    {
+        ""name"":""John"",
+        ""age"":30,
+        ""occupation"":""Teacher"",
+        ""courses"": [""Mathematics"", ""Physics"", ""Chemistry""]
+    },
+    {
+        ""name"":""Alice"",
+        ""age"":28,
+        ""occupation"":""Doctor"",
+        ""courses"": [""Anatomy"", ""Physiology"", ""Pharmacology""]
+    },
+    {
+        ""name"":""Michael"",
+        ""age"":35,
+        ""occupation"":""Lawyer"",
+        ""courses"": [""Constitutional Law"", ""Criminal Law"", ""Civil Rights""]
+    },
+    {
+        ""name"":""Emily"",
+        ""age"":22,
+        ""occupation"":""Student"",
+        ""courses"": [""Computer Science"", ""Psychology"", ""Literature""]
+    },
+    {
+        ""name"":""David"",
+        ""age"":40,
+        ""occupation"":""Manager"",
+        ""courses"": [""Business Management"", ""Leadership"", ""Marketing""]
+    },
+    {
+        ""name"":""Sophia"",
+        ""age"":27,
+        ""occupation"":""Nurse"",
+        ""courses"": [""Nursing"", ""First Aid"", ""Pediatrics""]
+    },
+    {
+        ""name"":""Daniel"",
+        ""age"":32,
+        ""occupation"":""Architect"",
+        ""courses"": [""Architecture Design"", ""Urban Planning"", ""Sustainable Design""]
+    },
+    {
+        ""name"":""Olivia"",
+        ""age"":29,
+        ""occupation"":""Writer"",
+        ""courses"": [""Creative Writing"", ""Literature"", ""Journalism""]
+    }
 ]";
 
-;
 
 var persons = JsonConvert.DeserializeObject<Person[]>(data);
-Console.WriteLine(JsonConvert.SerializeObject(persons, Formatting.Indented));
 
-record Person(string name, int age, string occupation);
+persons.Select(x => x.courses).Dump();
+
+record Person(string name, int age, string occupation, List<string> courses);
