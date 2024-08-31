@@ -1,10 +1,14 @@
+using System.Net.Mime;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 
-app.MapGet("/", (HttpContext content) =>
+app.MapPost("/", async (HttpContext content) =>
 {
-    System.Console.WriteLine("Hello World");
+
+    StreamReader reader = new StreamReader(content.Request.Body);
+    System.Console.WriteLine(await reader.ReadToEndAsync());
     return "Hello World";
 });
 
