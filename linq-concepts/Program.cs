@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Collections.Generic;
+using Dumpify;
+
+IEnumerable<object> collection = [1, 2, 3, 4, 5];
+
+
+collection.Dump();
