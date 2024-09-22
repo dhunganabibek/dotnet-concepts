@@ -1,11 +1,32 @@
-﻿using System.Collections.Generic;
-using System.Collections;
-using Dumpify;
-
-
-
+﻿
 #region LINQ architecture
-System.Console.WriteLine("Hello World!");
+System.Console.WriteLine("LINQ Query");
+int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+foreach (var item in numbers)
+{
+    if (item % 2 == 0)
+    {
+        System.Console.WriteLine(item);
+    }
+}
+System.Console.WriteLine("----------------------- ");
+
+var query = from num in numbers
+            where num % 2 == 0
+            select num;
+foreach (var item in query)
+{
+    System.Console.WriteLine(item);
+}
+
+System.Console.WriteLine("-----------------------------");
+
+var data = numbers.Where(x => x % 2 == 0);
+foreach (var item in data)
+{
+    System.Console.WriteLine(item);
+}
 #endregion
 
 
