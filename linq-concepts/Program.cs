@@ -3,32 +3,44 @@ using System.Collections;
 using Dumpify;
 
 
-#region Anonymous Types
 
-
-Student s = new Student();
-System.Console.WriteLine(s.Name);
-
-class Student
-{
-    int Id;
-    public string Name
-    {
-        get
-        {
-            return "John";
-        }
-        set
-        {
-            Name = value;
-        }
-    }
-    int Age;
-};
+#region LINQ architecture
+System.Console.WriteLine("Hello World!");
 #endregion
 
 
 
+
+
+
+
+
+#region Anonymous Types
+
+// var p = new { Name = "John", Age = 20 };
+// System.Console.WriteLine(p.Name);
+
+
+// Student s = new Student();
+// System.Console.WriteLine(s.Name);
+
+// class Student
+// {
+//     int Id;
+//     public string Name
+//     {
+//         get
+//         {
+//             return "John";
+//         }
+//         set
+//         {
+//             Name = value;
+//         }
+//     }
+//     int Age;
+// };
+#endregion
 #region IComparable and IComparer
 
 // List<Student> list = new List<Student> {
@@ -54,9 +66,6 @@ class Student
 // }
 
 #endregion
-
-
-
 #region LINQ Concepts
 
 // IEnumerable<int> collection = [1, 2, 3, 4, 5];
