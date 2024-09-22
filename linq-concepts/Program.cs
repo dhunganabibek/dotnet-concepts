@@ -1,41 +1,49 @@
 ﻿
-#region LINQ architecture
-System.Console.WriteLine("LINQ Query");
-int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+#region  group by
+var number = new List<int> { 10, 2, 3, 4, 100, 6, 7, 8, 9, 1 };
 
-foreach (var item in numbers)
-{
-    if (item % 2 == 0)
-    {
-        System.Console.WriteLine(item);
-    }
-}
-System.Console.WriteLine("----------------------- ");
+var query = from num in number
+            orderby num descending
+            group num by num % 2 == 0 ? "Even" : "Odd" into numGroup
+            select new { category = numGroup.Key, Numbers = numGroup };
 
-var query = from num in numbers
-            where num % 2 == 0
-            select num;
 foreach (var item in query)
 {
-    System.Console.WriteLine(item);
-}
-
-System.Console.WriteLine("-----------------------------");
-
-var data = numbers.Where(x => x % 2 == 0);
-foreach (var item in data)
-{
-    System.Console.WriteLine(item);
+    Console.WriteLine($"{item.category} -----  {string.Join(", ", item.Numbers)}");
 }
 #endregion
 
 
 
+#region LINQ architecture
+// System.Console.WriteLine("LINQ Query");
+// int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
+// foreach (var item in numbers)
+// {
+//     if (item % 2 == 0)
+//     {
+//         System.Console.WriteLine(item);
+//     }
+// }
+// System.Console.WriteLine("----------------------- ");
 
+// var query = from num in numbers
+//             where num % 2 == 0
+//             select num;
+// foreach (var item in query)
+// {
+//     System.Console.WriteLine(item);
+// }
 
+// System.Console.WriteLine("-----------------------------");
 
-
+// var data = numbers.Where(x => x % 2 == 0);
+// foreach (var item in data)
+// {
+//     System.Console.WriteLine(item);
+// }
+#endregion
 #region Anonymous Types
 
 // var p = new { Name = "John", Age = 20 };
