@@ -7,6 +7,10 @@ var query = from num in number
             group num by num % 2 == 0 ? "Even" : "Odd" into numGroup
             select new { category = numGroup.Key, Numbers = numGroup };
 
+
+var result = number.GroupBy(x => x % 2 == 0 ? "Even" : "Odd")
+    .Select(x => new { category = x.Key, Numbers = x });
+
 foreach (var item in query)
 {
     Console.WriteLine($"{item.category} -----  {string.Join(", ", item.Numbers)}");
