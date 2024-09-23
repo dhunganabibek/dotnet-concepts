@@ -1,4 +1,10 @@
 ﻿
+
+
+#region LINQ using lambda 
+
+#endregion
+
 #region  group by
 var number = new List<int> { 10, 2, 3, 4, 100, 6, 7, 8, 9, 1 };
 
@@ -16,9 +22,6 @@ foreach (var item in query)
     Console.WriteLine($"{item.category} -----  {string.Join(", ", item.Numbers)}");
 }
 #endregion
-
-
-
 #region LINQ architecture
 // System.Console.WriteLine("LINQ Query");
 // int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
