@@ -2,8 +2,8 @@
 
 #region working with path
 
-var totalPath = Path.Combine(Directory.GetCurrentDirectory());
-
+var totalPath = Path.Combine(Directory.GetCurrentDirectory(), "hello/you");
+System.Console.WriteLine(totalPath);
 
 #endregion
 
