@@ -1,26 +1,33 @@
 ﻿
 
+#region working with path
+
+var totalPath = Path.Combine(Directory.GetCurrentDirectory());
+
+
+#endregion
+
 
 #region LINQ using lambda 
 
 #endregion
 
 #region  group by
-var number = new List<int> { 10, 2, 3, 4, 100, 6, 7, 8, 9, 1 };
+// var number = new List<int> { 10, 2, 3, 4, 100, 6, 7, 8, 9, 1 };
 
-var query = from num in number
-            orderby num descending
-            group num by num % 2 == 0 ? "Even" : "Odd" into numGroup
-            select new { category = numGroup.Key, Numbers = numGroup };
+// var query = from num in number
+//             orderby num descending
+//             group num by num % 2 == 0 ? "Even" : "Odd" into numGroup
+//             select new { category = numGroup.Key, Numbers = numGroup };
 
 
-var result = number.GroupBy(x => x % 2 == 0 ? "Even" : "Odd")
-    .Select(x => new { category = x.Key, Numbers = x });
+// var result = number.GroupBy(x => x % 2 == 0 ? "Even" : "Odd")
+//     .Select(x => new { category = x.Key, Numbers = x });
 
-foreach (var item in query)
-{
-    Console.WriteLine($"{item.category} -----  {string.Join(", ", item.Numbers)}");
-}
+// foreach (var item in query)
+// {
+//     Console.WriteLine($"{item.category} -----  {string.Join(", ", item.Numbers)}");
+// }
 #endregion
 #region LINQ architecture
 // System.Console.WriteLine("LINQ Query");
