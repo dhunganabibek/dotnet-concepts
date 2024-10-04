@@ -1,0 +1,7 @@
+services:
+  broker:
+    image: apache/kafka:latest
+    container_name: broker
+    environment:
+      KAFKA_NUM_PARTITIONS: 4
+    
