@@ -1,6 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿var num = 20;
 
+bool isOdd(int num)
+{
+    return num % 2 == 1;
+}
 
-System.Console.WriteLine("test");
-
+Console.WriteLine(isOdd(20));
