@@ -1,26 +1,20 @@
 using lunchapi.Models;
+using lunchapi.Repositories;
 
 namespace lunchapi.Services;
 
 public class LunchService
 {
+    private readonly ILunchRepository _lunchRepository;
+
+    public LunchService(ILunchRepository lunchRepository)
+    {
+        _lunchRepository = lunchRepository;
+    }
+
     public List<Lunch> GetLunch()
     {
-        var lunchList = new List<Lunch>
-        {
-            new Lunch()
-            {
-                name = "Pizza",
-                price = 15.99M,
-                quantity = 1
-            },
-            new Lunch()
-            {
-                name = "MoMo",
-                price = 12.99M,
-                quantity = 10
-            }
-        };
-        return lunchList;
+        var data = _lunchRepository.GetLunch();
+        return data;
     }
 }
