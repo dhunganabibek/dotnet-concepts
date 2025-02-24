@@ -15,7 +15,7 @@ public class LunchController : ControllerBase
     }
 
     [HttpGet("lunch")]
-    public IActionResult HelloLunch()
+    public IActionResult GetLunch()
     {
         var data = _lunchService.GetLunch();
         return Ok(data);
