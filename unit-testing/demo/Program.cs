@@ -3,6 +3,7 @@ Test t2 = t1;
 t2.a = 500;
 
 System.Console.WriteLine(t2.a);
+System.Console.WriteLine(t1.a);
 
 
 public struct Test
